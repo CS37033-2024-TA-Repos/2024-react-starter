@@ -1,34 +1,40 @@
-import './App.css'
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import NavBar from "./Components/NavBar.tsx";
 
+import './App.css';
+import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
+import NavBar from './Components/NavBar';
+import OrderFlowers from "./Components/OrderFlowers";
 
 function App() {
-
     const router = createBrowserRouter([
         {
-            path: "/",
-            errorElement: <div />,
-            element: <Root />,
+            path: '/',
+            element: <Layout />,
             children: [
-                {
-                    path: "",
-                    element: <div>
-                        put routes here
-                    </div>
-                },
+                { path: '/', element: <Welcome /> },
+                { path: 'order-flowers', element: <OrderFlowers /> },
+                // ... other routes
             ],
         },
     ]);
-    return <RouterProvider router={router}></RouterProvider>
-    function Root() {
-        return (
-            <div className="w-full flex flex-col px-20 gap-5">
-                <h1>Welcome to your starter code.</h1>
-                <NavBar />
-            </div>
-        );
-    }
+
+    return <RouterProvider router={router} />;
 }
 
-export default App
+function Layout() {
+    return (
+        <>
+            <NavBar />
+            <Outlet /> {/* Child routes will render here */}
+        </>
+    );
+}
+
+function Welcome() {
+    return (
+        <div className="welcome">
+            <h1>Welcome to your starter code.</h1>
+        </div>
+    );
+}
+
+export default App;
