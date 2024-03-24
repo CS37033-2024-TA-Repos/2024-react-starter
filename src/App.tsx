@@ -1,5 +1,6 @@
 import './App.css'
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import NavBar from "./Components/NavBar.tsx";
 
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
         return (
             <div className="w-full flex flex-col px-20 gap-5">
                 <h1>Welcome to your starter code.</h1>
-                <Outlet />
+                <NavBar />
             </div>
         );
     }
