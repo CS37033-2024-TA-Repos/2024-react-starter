@@ -1,11 +1,10 @@
-import './NavBar.css';
+import './App.css'
 
 function NavBar() {
 
     return(
-        <div className="navbar">
-            {/* Navbar content */}
-            <h1>Navbar</h1>
+        <div>
+            <h1> test</h1>
         </div>
     )
 }
