@@ -1,10 +1,18 @@
 import React, {useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './OrderFlowers.module.css'; // Adjust the import path as necessary
 //go to http://localhost:5173/order-flowers to test because navbar isnt made yet
 const OrderFlowers: React.FC = () => {
     const [patientName, setPatientName] = useState('');
     const [patientRoom, setPatientRoom] = useState('');
     const [customMessage, setCustomMessage] = useState('');
+
+    const navigate = useNavigate();
+
+    const handleReviewOrder = () => {
+        // You may want to validate or process data here before navigating
+        navigate('/payment-info');
+    };
 
     return (
         <div className={styles.container}>
@@ -47,7 +55,7 @@ const OrderFlowers: React.FC = () => {
                         <button className={`${styles.button} ${styles.backButton}`} type="button">
                             Back
                         </button>
-                        <button className={`${styles.button} ${styles.reviewButton}`} type="submit">
+                        <button className={`${styles.button} ${styles.reviewButton}`} type="submit" onClick={handleReviewOrder}>
                             Review Order
                         </button>
                     </div>
