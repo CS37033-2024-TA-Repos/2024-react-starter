@@ -1,8 +1,11 @@
+import './NavBar.css';
+
 function NavBar() {
 
     return(
-        <div>
-            <h1> test</h1>
+        <div className="navbar">
+            {/* Navbar content */}
+            <h1>Navbar</h1>
         </div>
     )
 }
