@@ -1,10 +1,32 @@
-import React, {useState} from 'react';
-import styles from './OrderFlowers.module.css'; // Adjust the import path as necessary
-//go to http://localhost:5173/order-flowers to test because navbar isnt made yet
+// OrderFlowers.tsx
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import styles from './OrderFlowers.module.css';
+import { useFormData } from './useFormData';
+
 const OrderFlowers: React.FC = () => {
     const [patientName, setPatientName] = useState('');
     const [patientRoom, setPatientRoom] = useState('');
     const [customMessage, setCustomMessage] = useState('');
+
+    const navigate = useNavigate();
+    const { formData, setFormData } = useFormData();
+
+    const handleReviewOrder = () => {
+        setFormData({
+            ...formData,
+            orderFlowers: {
+                patientName,
+                patientRoom,
+                customMessage,
+            },
+        });
+        navigate('/payment-info');
+    };
+
+    const handleBack = () => {
+        navigate('/');
+    };
 
     return (
         <div className={styles.container}>
@@ -42,19 +64,17 @@ const OrderFlowers: React.FC = () => {
                     />
                 </div>
 
-
-                    <div className={styles.buttonGroup}>
-                        <button className={`${styles.button} ${styles.backButton}`} type="button">
-                            Back
-                        </button>
-                        <button className={`${styles.button} ${styles.reviewButton}`} type="submit">
-                            Review Order
-                        </button>
-                    </div>
+                <div className={styles.buttonGroup}>
+                    <button className={`${styles.button} ${styles.backButton}`} type="button" onClick={handleBack}>
+                        Back
+                    </button>
+                    <button className={`${styles.button} ${styles.reviewButton}`} type="button" onClick={handleReviewOrder}>
+                        Continue
+                    </button>
+                </div>
             </form>
         </div>
-);
+    );
 };
 
 export default OrderFlowers;
-
