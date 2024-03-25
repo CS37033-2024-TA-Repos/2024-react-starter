@@ -26,6 +26,7 @@
     flex-direction: row;
     align-items: center;
     padding-right: 1rem;
+    font-family: Jaldi, sans-serif;
 }
 
 .button{
@@ -33,6 +34,7 @@
     color: #003B9C;
     font-weight: normal;
     font-size: 24px;
+    text-decoration: none;
 }
 
 .bold{
@@ -43,4 +45,43 @@
     padding: 0.5rem;
     width: 55px;
     height: 55px;
+}
+
+.profile-button {
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+    transition: transform .7s ease-in-out;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0px;
+    background-color: #f1f1f1;
+    min-width: 235px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content Link:hover {background-color: #d9d9d9;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: flex;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .profile-button {background-color: #6fb49f;}
+
+ul {
+    list-style: none;
+    margin:0px;
+    padding:10px;
+    gap: 10px;
 }
