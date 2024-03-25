@@ -5,6 +5,18 @@
   text-align: center;
 }
 
+
+
+
+body {
+  background: linear-gradient(180deg, #5C99B3 0%, #4BB0A3 48%, #44B89C 100%);
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
+  font-family: 'Inter', sans-serif; /* Set default font family */
+
+/*  added default background gradient from figma*/
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

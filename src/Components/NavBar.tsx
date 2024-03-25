@@ -1,17 +1,20 @@
+import{Link} from "react-router-dom";
+import './NavBar.css'
+
 function NavBar() {
 
-    return (
-        <nav className="navbar navbar-light bg-light">
-            <a className="navbar-brand" href="#">
-                <img
-                    src="/docs/4.0/assets/brand/bootstrap-solid.svg"
-                    width="30"
-                    height="30"
-                    className="d-inline-block align-top"
-                    alt="Brigham and Women's Hospital Logo"/>
-                    Cat
-            </a>
-        </nav>
+    //Map button will link you to a 404 page, order flowers will link you to the order flowers page
+    //Once Map page is made, we can change the link to the correct path
+    return(
+        <div className="navbar">
+            {/* Navbar content */}
+            <img src="src/assets/bwh-logo.svg" className={"bwh-logo"} alt={"logo"}/>
+            <div className={"navButtons"}>
+                <Link to={"/order-flowers"} className={"button"} id={"order"}>ORDER FLOWERS</Link>
+                <Link to={"/map"} className={"button"} id={"map"}>HOSPITAL MAP</Link>
+                <img src="src/assets/userIcon.png" className={"userIcon"} alt={"user Icon"}/>
+            </div>
+        </div>
     )
 }
 
