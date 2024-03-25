@@ -1,11 +1,14 @@
 import styles from './OrderPayment.module.css';
 import React, { useState } from 'react'; // Create a CSS module for the payment page similarly
+import { useNavigate } from 'react-router-dom';
+
 
 const OrderPayment: React.FC = () => {
     const [cardNumber, setCardNumber] = useState('');
     const [cvv, setCvv] = useState('');
     const [expirationDate, setExpirationDate] = useState('');
     const [nameOnCard, setNameOnCard] = useState('');
+    const navigate = useNavigate();
 
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
@@ -13,61 +16,70 @@ const OrderPayment: React.FC = () => {
         // Maybe sending the data to your server or processing the payment
     };
 
+    const handleBack = () => {
+        // You may want to validate or process data here before navigating
+        navigate('/order-flowers');
+    };
+
     return (
         <div className={styles.container}>
             <h2 className={styles.title}>Payment Information</h2>
             <form onSubmit={handleSubmit}>
                 {/* Card Number Input */}
-                <div className={styles.formGroup}>
+                <div className={`${styles.formGroup} ${styles.cardNumberGroup}`}>
                     <label className={styles.label}>Credit Card Number</label>
                     <input
                         className={styles.input}
                         type="text"
                         value={cardNumber}
                         onChange={(e) => setCardNumber(e.target.value)}
-                        placeholder="Card Number Here"
+                        placeholder="0000 0000 0000 "
                     />
                 </div>
 
-                {/* CVV and Expiration Date Inputs */}
+                {/* CVV and Expiration Date Inputs Inline */}
                 <div className={styles.inputRow}>
-                    <div className={styles.formGroup}>
+                    {/* CVV Input */}
+                    <div className={`${styles.formGroup} ${styles.cvvGroup}`}>
                         <label className={styles.label}>CVV</label>
                         <input
                             className={styles.input}
                             type="text"
                             value={cvv}
                             onChange={(e) => setCvv(e.target.value)}
-                            placeholder="CVV Here"
+                            placeholder="123"
                         />
                     </div>
-                    <div className={styles.formGroup}>
+                    {/* Expiration Date Input */}
+                    <div className={`${styles.formGroup} ${styles.expirationDateGroup}`}>
                         <label className={styles.label}>Expiration Date</label>
                         <input
                             className={styles.input}
                             type="text"
                             value={expirationDate}
                             onChange={(e) => setExpirationDate(e.target.value)}
-                            placeholder="MM/YY"
+                            placeholder="MM/DD"
                         />
                     </div>
                 </div>
 
+
                 {/* Name on Card Input */}
-                <div className={styles.formGroup}>
+                <div className={`${styles.formGroup} ${styles.nameOnCardGroup}`}>
                     <label className={styles.label}>Name on Card</label>
                     <input
                         className={styles.input}
                         type="text"
                         value={nameOnCard}
                         onChange={(e) => setNameOnCard(e.target.value)}
-                        placeholder="Name Here"
+                        placeholder="John Doe"
                     />
                 </div>
 
+
                 {/* Button Group */}
                 <div className={styles.buttonGroup}>
-                    <button className={`${styles.button} ${styles.backButton}`} type="button">
+                    <button className={`${styles.button} ${styles.backButton}`} type="button" onClick={handleBack}>
                         Back
                     </button>
                     <button className={`${styles.button} ${styles.reviewButton}`} type="submit">

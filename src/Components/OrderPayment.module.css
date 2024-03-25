@@ -9,7 +9,7 @@
     left: 50%; /* Center the container horizontally */
     transform: translateX(-50%); /* Adjust horizontal centering with transform */
     width: 50%; /* 53.4% of the parent element's width */
-    height: 76%;
+    height: 75%;
     background: #FFFFFF;
     border-radius: 43px;
 
@@ -56,7 +56,7 @@
     border-radius: 16px;
 
     display: flex;
-    width: 100%; /* Subtract the padding and/or margin from the width to ensure it fits within the parent */
+    width: calc(100% - 2rem); /* Subtract the padding and/or margin from the width to ensure it fits within the parent */
     min-width: 0;
 }
 
@@ -75,7 +75,8 @@
     display: flex;
     flex-direction: column; /* Stack elements vertically */
     align-items: flex-start; /* Align items to the start (left) */
-    margin-bottom: 20px; /* Add space below this form group */
+    margin-bottom: 10px; /* Add space below this form group */
+
     width: 100%; /* Set width to 100% of its parent to avoid overflow */
     max-width: 100%
 }
@@ -85,7 +86,27 @@
     font-size: 20px;
     line-height: 41px;
     color: #000000;
-    margin-bottom: 5px; /* Add some space between label and input */
+    margin-bottom: 0px; /* Add some space between label and input */
+}
+
+
+
+.cardNumberGroup .input,
+.nameOnCardGroup .input {
+    width: 100%; /* Full width */
+    margin-bottom: 10px;
+}
+
+
+
+.cvvGroup .input {
+    flex-basis: 10%; /* Adjust the percentage as necessary for the CVV input */
+    /* Add any other styles that are specific to this input */
+}
+
+ .expirationDateGroup .input {
+    flex-basis: 70%; /* Adjust the percentage as necessary for the expiration date input */
+    /* Add any other styles that are specific to this input */
 }
 
 
@@ -97,6 +118,7 @@
     width: 100%; /* Take up full width of the parent container */
     /* Remove gap if you want the buttons to align exactly at the ends */
     flex-wrap: wrap;
+    margin-top: 7px;
 }
 
 .button,
@@ -122,6 +144,7 @@
     text-transform: uppercase;
     color: #FFFFFF;
     margin-right: 5px; /* Spacing between buttons, adjust if needed */
+
 
     flex: 1 1 auto; /* Allow the button to grow and shrink, but not to exceed the container's width */
     max-width: calc(50% - 1rem);
@@ -163,7 +186,6 @@
         width: 100%; /* Allow input and textarea to take the full width of the container */
         max-width: 100%; /* Prevent them from exceeding the container's width */
         margin: 0 auto; /* Center the input/textarea horizontally */
-
     }
 
     .button {

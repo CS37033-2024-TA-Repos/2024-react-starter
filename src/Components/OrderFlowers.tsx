@@ -14,6 +14,12 @@ const OrderFlowers: React.FC = () => {
         navigate('/payment-info');
     };
 
+    const handleBack = () => {
+        // You may want to validate or process data here before navigating
+        navigate('/');
+    };
+
+
     return (
         <div className={styles.container}>
             <h2 className={styles.title}>Order Flowers</h2>
@@ -52,7 +58,7 @@ const OrderFlowers: React.FC = () => {
 
 
                     <div className={styles.buttonGroup}>
-                        <button className={`${styles.button} ${styles.backButton}`} type="button">
+                        <button className={`${styles.button} ${styles.backButton}`} type="button" onClick={handleBack}>
                             Back
                         </button>
                         <button className={`${styles.button} ${styles.reviewButton}`} type="submit" onClick={handleReviewOrder}>
