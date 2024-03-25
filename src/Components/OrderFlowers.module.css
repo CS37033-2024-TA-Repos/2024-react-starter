@@ -36,6 +36,20 @@
     margin-bottom: 20px; /* Space between title and form */
 }
 
+.result {
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+    color: #000000;
+    padding: 15px 22px;
+    display: flex;
+    width: calc(100% - 2rem); /* Subtract the padding and/or margin from the width to ensure it fits within the parent */
+    min-width: 0;
+}
+
+.boldLabel {
+    font-weight: bold;
+}
+
 .inputRow {
     display: flex;
     justify-content: center;

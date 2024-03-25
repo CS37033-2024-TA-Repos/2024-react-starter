@@ -6,6 +6,7 @@ import OrderFlowers from "./Components/OrderFlowers";
 import OrderPayment from './Components/OrderPayment';
 import DisplayFormData from './Components/DisplayFormData.tsx';
 import { FormDataProvider } from './Components/FormDataContext.tsx';
+import OrderFlowersResult from "./Components/OrderFlowersResult.tsx"
 
 function App() {
     const router = createBrowserRouter([
@@ -17,6 +18,7 @@ function App() {
                 { path: 'order-flowers', element: <OrderFlowers /> },
                 { path: 'payment-info', element: <OrderPayment /> },
                 { path: 'display-data', element: <DisplayFormData /> },
+                { path: 'order-flowers-result', element: <OrderFlowersResult /> },
                 // New route for payment info
                 // ... other routes
             ],

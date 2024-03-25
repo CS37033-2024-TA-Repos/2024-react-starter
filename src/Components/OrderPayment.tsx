@@ -23,7 +23,7 @@ const OrderPayment: React.FC = () => {
                 nameOnCard,
             },
         });
-        navigate('/display-data'); // Navigate to the display data page
+        navigate('/order-flowers-result'); // Navigate to the display data page
     };
 
     const handleSubmit = (event: React.FormEvent) => {
