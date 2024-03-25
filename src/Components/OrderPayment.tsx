@@ -1,4 +1,4 @@
-import styles from './OrderFlowers.module.css';
+import styles from './OrderPayment.module.css';
 import React, { useState } from 'react'; // Create a CSS module for the payment page similarly
 
 const OrderPayment: React.FC = () => {
