@@ -1,9 +1,17 @@
 function NavBar() {
 
-    return(
-        <div>
-            <h1> test</h1>
-        </div>
+    return (
+        <nav className="navbar navbar-light bg-light">
+            <a className="navbar-brand" href="#">
+                <img
+                    src="/docs/4.0/assets/brand/bootstrap-solid.svg"
+                    width="30"
+                    height="30"
+                    className="d-inline-block align-top"
+                    alt="Brigham and Women's Hospital Logo"/>
+                    Cat
+            </a>
+        </nav>
     )
 }
 
