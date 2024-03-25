@@ -6,10 +6,9 @@
 }
 
 
-
-
 body {
   background: linear-gradient(180deg, #5C99B3 0%, #4BB0A3 48%, #44B89C 100%);
+  background-attachment: fixed;
   margin: 0; /* Remove default body margin */
   padding: 0; /* Remove default body padding */
   font-family: 'Inter', sans-serif; /* Set default font family */
