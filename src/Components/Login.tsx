@@ -5,12 +5,11 @@ const Login: React.FC = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-
     return (
         <div>
             <h2 className={styles.title}>Sign in</h2>
             <form>
-
+            <br/>
                 <div className={styles.formGroup}>
                     <input
                         className={styles.input}

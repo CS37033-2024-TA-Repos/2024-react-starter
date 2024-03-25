@@ -1,13 +1,11 @@
-/* OrderFlowers.module.css */
+/* Login.module.css */
 @import url('https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap');
 
 
 body {
-    background-image: url(img.png);
+    background-image: url(Darker.png);
     background-repeat: no-repeat;
-    background-color: #5C99B3;
-    background-size: 1490px 773px;
-    background-position: center;
+    background-size: cover;
 }
 
 .title {
@@ -16,7 +14,7 @@ body {
     font-size: 60px;
     line-height: 73px;
     color: White;
-    margin-bottom: 30px; /* Space between title and form */
+    margin-bottom: 0px; /* Space between title and form */
 }
 
 .inputRow {
@@ -128,7 +126,7 @@ input[type="checkbox"]:checked {
     font-family: 'Jaldi', sans-serif;
     font-size: 24px; /* Adjusted to match your specified font styles */
     font-weight: 900;
-    line-height: 41px;
+    line-height: 30px;
     text-align: center;
     text-transform: uppercase;
     color: #FFFFFF;
