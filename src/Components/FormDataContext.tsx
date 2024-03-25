@@ -1,5 +1,7 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+// FormDataContext.tsx
+import React, { createContext, useState, ReactNode } from 'react';
 
+// Define the structure of your form data
 interface OrderFlowersData {
     patientName: string;
     patientRoom: string;
@@ -18,19 +20,17 @@ interface FormData {
     orderPayment: OrderPaymentData;
 }
 
-interface FormDataContextType {
+// Export the context type
+export interface FormDataContextType {
     formData: FormData;
     setFormData: React.Dispatch<React.SetStateAction<FormData>>;
 }
 
-const FormDataContext = createContext<FormDataContextType | undefined>(undefined);
+// Create the context
+export const FormDataContext = createContext<FormDataContextType | undefined>(undefined);
 
-// Define a type for the props of FormDataProvider
-interface FormDataProviderProps {
-    children: ReactNode;
-}
-
-export const FormDataProvider: React.FC<FormDataProviderProps> = ({ children }) => {
+// Create the provider component
+export const FormDataProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [formData, setFormData] = useState<FormData>({
         orderFlowers: {
             patientName: '',
@@ -50,12 +50,4 @@ export const FormDataProvider: React.FC<FormDataProviderProps> = ({ children }) 
             {children}
         </FormDataContext.Provider>
     );
-};
-
-export const useFormData = () => {
-    const context = useContext(FormDataContext);
-    if (context === undefined) {
-        throw new Error('useFormData must be used within a FormDataProvider');
-    }
-    return context;
 };
