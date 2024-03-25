@@ -1,0 +1,19 @@
+// DisplayFormData.tsx
+import React from 'react';
+import { useFormData } from './FormDataContext.tsx';
+
+const DisplayFormData: React.FC = () => {
+    const { formData } = useFormData();
+
+    return (
+        <div>
+            <h2>Order Flowers Data:</h2>
+            <pre>{JSON.stringify(formData.orderFlowers, null, 2)}</pre>
+
+            <h2>Order Payment Data:</h2>
+            <pre>{JSON.stringify(formData.orderPayment, null, 2)}</pre>
+        </div>
+    );
+};
+
+export default DisplayFormData;

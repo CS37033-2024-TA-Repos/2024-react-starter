@@ -1,14 +1,30 @@
-import styles from './OrderPayment.module.css';
-import React, { useState } from 'react'; // Create a CSS module for the payment page similarly
+// OrderPayment.tsx
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import styles from './OrderPayment.module.css';
+import { useFormData } from './FormDataContext.tsx';
 
 const OrderPayment: React.FC = () => {
     const [cardNumber, setCardNumber] = useState('');
     const [cvv, setCvv] = useState('');
     const [expirationDate, setExpirationDate] = useState('');
     const [nameOnCard, setNameOnCard] = useState('');
+
     const navigate = useNavigate();
+    const { formData, setFormData } = useFormData();
+
+    const handleContinue = () => {
+        setFormData({
+            ...formData,
+            orderPayment: {
+                cardNumber,
+                cvv,
+                expirationDate,
+                nameOnCard,
+            },
+        });
+        navigate('/display-data'); // Navigate to the display data page
+    };
 
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
@@ -33,7 +49,7 @@ const OrderPayment: React.FC = () => {
                         type="text"
                         value={cardNumber}
                         onChange={(e) => setCardNumber(e.target.value)}
-                        placeholder="0000 0000 0000 "
+                        placeholder="0000 0000 0000 0000"
                     />
                 </div>
 
@@ -82,8 +98,8 @@ const OrderPayment: React.FC = () => {
                     <button className={`${styles.button} ${styles.backButton}`} type="button" onClick={handleBack}>
                         Back
                     </button>
-                    <button className={`${styles.button} ${styles.reviewButton}`} type="submit">
-                        Continue
+                    <button className={`${styles.button} ${styles.reviewButton}`} type="button" onClick={handleContinue}>
+                        Review Order
                     </button>
                 </div>
             </form>
