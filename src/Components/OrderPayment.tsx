@@ -46,10 +46,13 @@ const OrderPayment: React.FC = () => {
                     <label className={styles.label}>Credit Card Number</label>
                     <input
                         className={styles.input}
-                        type="text"
+                        type="number"
                         value={cardNumber}
                         onChange={(e) => setCardNumber(e.target.value)}
                         placeholder="0000 0000 0000 0000"
+                        min="0"
+                        max="9999999999999999"
+                        step="1"
                     />
                 </div>
 
@@ -60,7 +63,7 @@ const OrderPayment: React.FC = () => {
                         <label className={styles.label}>CVV</label>
                         <input
                             className={styles.input}
-                            type="text"
+                            type="number"
                             value={cvv}
                             onChange={(e) => setCvv(e.target.value)}
                             placeholder="123"
