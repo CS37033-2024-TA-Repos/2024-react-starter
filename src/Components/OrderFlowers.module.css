@@ -5,9 +5,9 @@
 
 
     position: absolute;
-    top: 120px;
+    top: 59%;
     left: 50%; /* Center the container horizontally */
-    transform: translateX(-50%); /* Adjust horizontal centering with transform */
+    transform: translate(-50%, -50%); /* Adjust horizontal centering with transform */
     width: 50%; /* 53.4% of the parent element's width */
     height: 80%;
     background: #FFFFFF;
@@ -173,6 +173,13 @@
         flex-direction: column;
         align-items: center; /* Center-align flex children vertically within the flex container */
     }
+
+
+    .title{
+        overflow-wrap: break-word;
+        font-size: 40px;
+    }
+
 
     .input,
     .textarea {

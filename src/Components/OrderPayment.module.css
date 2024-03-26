@@ -6,9 +6,9 @@
 
 
     position: absolute;
-    top: 120px;
+    top: 59%;
     left: 50%; /* Center the container horizontally */
-    transform: translateX(-50%); /* Adjust horizontal centering with transform */
+    transform: translate(-50%, -50%); /* Adjust horizontal centering with transform */
     width: 50%; /* 53.4% of the parent element's width */
     height: 80%;
     background: #FFFFFF;
@@ -152,6 +152,7 @@
     max-width: calc(50% - 1rem);
 }
 
+
 .backButton {
     background: #F3F3F3;
     color: #000000;
@@ -176,6 +177,11 @@
     .container {
         overflow-y: auto; /* Enable vertical scrolling for smaller screens */
         /* ... other styles for smaller screens ... */
+    }
+
+    .title{
+        overflow-wrap: break-word;
+        font-size: 40px;
     }
 
     .inputRow {

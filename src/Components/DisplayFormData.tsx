@@ -8,6 +8,10 @@ const DisplayFormData: React.FC = () => {
     return (
         <div>
 
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
             <h2>Order Flowers Data:</h2>
             <pre>{JSON.stringify(formData.orderFlowers, null, 2)}</pre>
 
