@@ -14,8 +14,8 @@ body {
     font-size: 60px;
     line-height: 250px;
     color: White;
-    translate: 0px 20px;
-    margin-bottom: 0px; /* Space between title and form */
+    translate: 0 20px;
+    margin-bottom: 0; /* Space between title and form */
 }
 
 .inputRow {
@@ -26,7 +26,7 @@ body {
 }
 
 .cb {
-    margin: 5px 0px;
+    margin: 5px;
     padding: 0.5em;
     border-radius: 0;
     height: 1em;
@@ -148,7 +148,6 @@ input[type="checkbox"]:checked {
     display: block;
     margin: auto;
     width: 320px;
-    margin-bottom: 0px;
     text-align: center;
 }
 
@@ -159,7 +158,6 @@ input[type="checkbox"]:checked {
     margin: auto;
 
     width: 320px;
-    margin-bottom: 0px;
 
 }
 
