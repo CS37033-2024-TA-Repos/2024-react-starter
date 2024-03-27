@@ -15,7 +15,7 @@ function NavBar() {
                 "'Founding member, Mass General Brigham'"}/>
             <div className={"navButtons"}>
                 <Link to={"/order-flowers"} className={"button"} id={"order"}><b>SERVICE REQUEST</b></Link>
-                <Link to={"/map"} className={"button"} id={"map"}>HOSPITAL MAP</Link>
+                <Link to={"/floor-map"} className={"button"} id={"map"}>HOSPITAL MAP</Link>
                 <div className={"dropdown"}>
                     <button className={"profile-button"}>
                         <img src="src/assets/userIcon.png" className={"userIcon"} alt={"Profile Button"}/>
