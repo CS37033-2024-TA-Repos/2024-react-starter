@@ -8,9 +8,9 @@ import NavBarLogin from "./Components/NavBarLogin.tsx";
 function App() {
     const router = createBrowserRouter([
         {
-
             children: [
                 { path: '/', element:<><Login/><LayoutLogin/></> },
+                { path: 'welcome', element:<><Welcome/><Layout/></> },
                 { path: 'order-flowers', element: <><OrderFlowers /><Layout/></> },
 
                 // ... other routes
@@ -21,6 +21,14 @@ function App() {
 
     return <RouterProvider router={router} />;
 }
+function Welcome() {
+    return (
+        <div className="welcome">
+            <h1>Welcome to your starter code.</h1>
+        </div>
+    );
+}
+
 
 function Layout() {
     return (

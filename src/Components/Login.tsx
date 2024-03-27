@@ -9,7 +9,6 @@ const Login: React.FC = () => {
         <div>
             <h2 className={styles.title}>Sign in</h2>
             <form>
-            <br/>
                 <div className={styles.formGroup}>
                     <input
                         className={styles.input}
@@ -29,14 +28,14 @@ const Login: React.FC = () => {
                         placeholder="Password"
                     />
                 </div>
+
+                <label className={styles.cb}>Remember Me</label>
+                <input type="checkbox" id = "checkbox" name = "checkbox"/>
             </form>
-            <br/>
-            <h3 className={styles.h3}>FORGOT PASSWORD?</h3>
-<br/>
-            <label className="cb-div">
-                <input type="checkbox"/>
-                <label>REMEMBER ME</label>
-            </label>
+
+            <p className={styles.h3}>Forgot Password?</p>
+
+
 
             <div className={styles.buttonGroup}>
                 <div className={styles.buttonGroup}>
@@ -47,7 +46,7 @@ const Login: React.FC = () => {
 
 
                 <div className={styles.buttonGroup}>
-                    <button className={`${styles.button} ${styles.newAcctButton}`} type="button" >
+                    <button className={`${styles.button} ${styles.newAcctButton}`} type="button">
                         Create New Account
                     </button>
                 </div>

@@ -12,8 +12,9 @@ body {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 60px;
-    line-height: 73px;
+    line-height: 250px;
     color: White;
+    translate: 0px 20px;
     margin-bottom: 0px; /* Space between title and form */
 }
 
@@ -24,28 +25,33 @@ body {
     gap: 40px; /* Space between the two inputs */
 }
 
-.cb-div {
-    display: flex;
-    justify-content: start;
+.cb {
+    margin: 5px 0px;
+    padding: 0.5em;
+    border-radius: 0;
+    height: 1em;
+    translate: 470px 15px;
     float: left;
-    gap: 4px;
+    font-size: 18px;
+    color: white;
 }
 
+
 .h3 {
-    display: flex;
-    font-size: 13px;
+    font-size: 18px;
     color: white;
-    text-align: center;
-   float: right;
+    translate: 40px -6.5px;
 }
 
 input[type="checkbox"] {
+  flex: 1;
     margin: 0 0;
     padding: 0.5em;
     border-radius: 0;
     border: 4px solid #ced0ce;
     width: 1em;
     height: 1em;
+    translate: -250px 30px;
 }
 
 input[type="checkbox"]:checked {
@@ -53,7 +59,9 @@ input[type="checkbox"]:checked {
     margin: 0 0;
     padding: 0.5em;
     border: 1px solid #ced0ce;
-
+    width: 1em;
+    height: 1em;
+    translate: -250px 30px
 }
 
 .input,
@@ -83,7 +91,7 @@ input[type="checkbox"]:checked {
 .formGroup {
     display: flex;
     flex-direction: column; /* Stack elements vertically */
-    align-items: flex-start; /* Align items to the start (left) */
+    align-items: center; /* Align items to the start (left) */
     margin-bottom: 20px; /* Add space below this form group */
 }
 
@@ -137,18 +145,21 @@ input[type="checkbox"]:checked {
     background: linear-gradient(90deg, #9360D5 0%, #5468B1 82%);
     color: white;
 
-    margin-right: 40px; /* Ensure this is the same as the left margin of the reviewButton */
-    margin-left: 40px;
+    display: block;
+    margin: auto;
     width: 320px;
-
+    margin-bottom: 0px;
+    text-align: center;
 }
 
 .newAcctButton {
     background: linear-gradient(90deg, #9360D5 0%, #5468B1 82%);
     color: white;
-    margin-right: 40px;
-    margin-left: 40px; /* Same as the right margin of the backButton to ensure symmetry */
+    display: block;
+    margin: auto;
+
     width: 320px;
+    margin-bottom: 0px;
 
 }
 
